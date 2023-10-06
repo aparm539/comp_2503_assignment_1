@@ -8,11 +8,11 @@ public class LeastFreqAvenger implements Comparator <Avenger>{
 		if (a1.avengerMentionCount() > (a2.avengerMentionCount())) {
 			result = -1;
 		}
-		else if(a1.getPerformer()  (a2.getPerformer())) {
+		else if(a1.getHeroName().length() < a2.getHeroName().length()) {
 			result = 1;
 		}
 		else {
-			result = a1.getHeroName().length() - a2.getHeroName().length();
+			result = a1.getHeroAlias().compareTo(a2.getHeroAlias());
 		}
 		return result;
 	}
