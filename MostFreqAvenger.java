@@ -10,9 +10,9 @@ public class MostFreqAvenger implements Comparator <Avenger>{
 		if (a1.avengerMentionCount() > (a2.avengerMentionCount())) {
 			result = -1;
 		}
-		//else if(a1.getPerformer()  (a2.getPerformer())) {
-			//result = 1;
-		//}
+		else if(a1.getPerformer()  (a2.getPerformer())) {
+			result = 1;
+		}
 		else {
 			result = a1.getHeroName().length() - a2.getHeroName().length();
 		}
@@ -39,9 +39,6 @@ public class MostFreqAvenger implements Comparator <Avenger>{
 //	the count for the number times they are mentioned by alias, hero name,
 //	or performer’s last name). In case of ties, then the secondary ordering
 //	must be in ascending alphabetical order of performer’s last name (a-z).
-//	 The four most frequently mentioned performers ordered from most to least.
-//	In case of ties, then the secondary ordering must be in ascending order of
-//	hero’s name’s length, then again in case of ties, in ascending alphabetical
-//	order of alias (a-z).
+	
 
 }
