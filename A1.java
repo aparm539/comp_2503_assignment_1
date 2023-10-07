@@ -39,33 +39,17 @@ public class A1 {
 	 * how many times avengers are mentioned by alias or last name or performer's last name.
 	 */
 	private void readInput() {
-		/*
-		In a loop, while the scanner object has not reached end of stream,
-		 	- read a word.
-		 	- clean up the word
-		    - if the word is not empty, add the word count. 
-		    - Check if the word is either an avenger alias or last name, or performer last name then
-				- Create a new avenger object with the corresponding alias and last name and performer last name.
-				- if this avenger has already been mentioned, increase the corresponding frequency count for the object already in the list.
-				- if this avenger has not been mentioned before, add the newly created avenger to the list, remember to update the corresponding frequency.
-		*/
 		while (input.hasNext()){
 			String current = input.next();
-			current = formateString(current);
+			current = formatString(current);
 			if (current.length() > 0){
 				totalwordcount+=1;
 				if (isAvenger(current)){
-					if (wasMentioned(current)){
-						//TODO
-					}
-					else{
-						//TODO
-					}
+					wasMentioned(current);
 				}
 			}
 		}
 	}
-
 	private Boolean isAvenger(String val){
 		for (String [] alias:avengerRoster) {
 			for (String name : alias) {
@@ -77,10 +61,27 @@ public class A1 {
 		return false;
 	}
 	private Boolean wasMentioned(String name){
-		//TODO
-		return false;
+		try {
+			for (Avenger avenger : avengersArrayList) {
+				if (avenger.getHeroAlias().equals(name)) {
+					avenger.setAliasFreq(avenger.getAliasFreq() + 1);
+					return true;
+				} else if (avenger.getHeroName().equals(name)) {
+					avenger.setNameFreq(avenger.getNameFreq() + 1);
+					return true;
+				} else if (avenger.getPerformer().equals(name)) {
+					avenger.setPerformerFreq(avenger.getPerformerFreq() + 1);
+					return true;
+				}
+			}
+		}
+		catch (Exception e){
+			//avengersArrayList.add(new Avenger(name));
+			return false;
+		}
+		return null;
 	}
-	private String formateString(String avenger){
+	private String formatString(String avenger){
 		if (isAvenger(avenger)){
 			if (avenger.contains("'")){
 				String[] arrOfStr = avenger.split("'");
