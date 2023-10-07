@@ -17,10 +17,5 @@ public class LeastFreqAvenger implements Comparator <Avenger>{
 		return result;
 	}
 	
-//	 The four (most) least frequently mentioned performers ordered from most to least.
-//	In case of ties, then the secondary ordering must be in ascending order of
-//	hero’s name’s length, then again in case of ties, in ascending alphabetical
-//	order of alias (a-z).
-	
 
 }

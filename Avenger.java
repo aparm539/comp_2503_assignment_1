@@ -23,56 +23,30 @@ public class Avenger implements Comparable<Avenger> {
 		return heroAlias;
 	}
 
-//	public void setHeroAlias(String heroAlias) {
-//		this.heroAlias = heroAlias;
-//	}
-
 	public String getHeroName() {
 		return heroName;
 	}
-
-//	public void setHeroName(String heroName) {
-//		this.heroName = heroName;
-//	}
 
 	public String getPerformer() {
 		return performer;
 	}
 
-//	public void setPerformer(String performer) {
-//		this.performer = performer;
-//	}
-
 	public int getNameFreq() {
 		return nameFreq;
 	}
-
-//	public void setNameFreq(int nameFreq) {
-//		this.nameFreq = nameFreq;
-//	}
 
 	public int getAliasFreq() {
 		return aliasFreq;
 	}
 
-//	public void setAliasFreq(int aliasFreq) {
-//		this.aliasFreq = aliasFreq;
-//	}
-
 	public int getPerformerFreq() {
 		return performerFreq;
 	}
 
-//	public void setPerformerFreq(int performerFreq) {
-//		this.performerFreq = performerFreq;
-//	}
-	
 	public int avengerMentionCount () {
 		return this.getAliasFreq() + this.getNameFreq() + this.getPerformerFreq();
-		
 	}
 
-	
 	@Override
 	public int compareTo(Avenger a) {
 		int result = this.getHeroAlias().compareTo(a.getHeroAlias()); 
@@ -81,7 +55,6 @@ public class Avenger implements Comparable<Avenger> {
 		}
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -124,7 +97,8 @@ public class Avenger implements Comparable<Avenger> {
 				+ "(n: " + nameFreq  
 				+ " + a: " + aliasFreq 
 				+ " + p: " + performerFreq 
-				+ ")" + " time(s)";				}
+				+ ")" + " time(s)";				
+		}
 	
 
 }
