@@ -48,14 +48,50 @@ public class A1 {
 				- Create a new avenger object with the corresponding alias and last name and performer last name.
 				- if this avenger has already been mentioned, increase the corresponding frequency count for the object already in the list.
 				- if this avenger has not been mentioned before, add the newly created avenger to the list, remember to update the corresponding frequency.
-		*/ 
+		*/
+		while (input.hasNext()){
+			String current = input.next();
+			current = formateString(current);
+			if (current.length() > 0){
+				totalwordcount+=1;
+				if (isAvenger(current)){
+					if (wasMentioned(current)){
+						//TODO
+					}
+					else{
+						//TODO
+					}
+				}
+			}
+		}
 	}
-	
-	
-	/*
-	 * Create helper functions as needed
-	 */
 
+	private Boolean isAvenger(String val){
+		for (String [] alias:avengerRoster) {
+			for (String name : alias) {
+				if (val.contains(name)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	private Boolean wasMentioned(String name){
+		//TODO
+		return false;
+	}
+	private String formateString(String avenger){
+		if (isAvenger(avenger)){
+			if (avenger.contains("'")){
+				String[] arrOfStr = avenger.split("'");
+				avenger = arrOfStr[0];
+			}
+			avenger = avenger.replaceAll("[^a-zA-Z]","")
+					.toLowerCase()
+					.trim();
+		}
+		return avenger;
+	}
 
 	/**
 	 * print the results
